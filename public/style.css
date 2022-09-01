@@ -12,6 +12,10 @@
   background-color: #f5eddc;
 }
 
+#App {
+  position: relative;
+}
+
 /* #header {
   display: flex;
   justify-content: space-between;

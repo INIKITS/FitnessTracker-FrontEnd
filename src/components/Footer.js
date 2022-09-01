@@ -1,8 +1,9 @@
 import React from 'react';
+import '../styles/Header-Footer.scss';
 
 function Footer() {
   return (
-    <div className='footer'>
+    <div id='footer'>
       <h3>I am a footer</h3>
     </div>
   );
