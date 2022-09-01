@@ -1,0 +1,58 @@
+#modal {
+  background-color: #f9f9f9;
+  height: 20rem;
+  width: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7rem;
+  border-radius: 5%;
+  box-shadow: 5px 4px 30px rgba(87, 87, 87, 0.226);
+  font-family: 'Poppins', sans-serif;
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e6e6e6;
+      border-radius: 5px;
+      margin-top: 2px;
+      margin-bottom: 10px;
+      font-family: inherit;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background: #d9d9d9;
+      color: black;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      appearance: button;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+    }
+
+    a {
+      padding-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}
