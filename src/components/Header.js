@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/Header.scss';
+import Logo from '../img/spa-logotype.png';
+
 function Header(props) {
   const { isLoggedIn } = props;
 
   console.log('isLoggedIn', isLoggedIn);
   return (
     <div id='header'>
-      <h1 id='header-text'>Fitness Tracker</h1>
+      <h1 id='header-text'>FITNESS TRACKER</h1>
       <nav>
         <ul id='nav-list'>
           <li>
@@ -17,7 +19,7 @@ function Header(props) {
                 textDecoration: isActive ? 'underline' : 'none',
               })}
             >
-              Home
+              HOME
             </NavLink>
           </li>
           <li className='nav-text'>
@@ -27,7 +29,7 @@ function Header(props) {
                 textDecoration: isActive ? 'underline' : 'none',
               })}
             >
-              Activities
+              ACTIVITIES
             </NavLink>
           </li>
 
@@ -38,7 +40,7 @@ function Header(props) {
                 textDecoration: isActive ? 'underline' : 'none',
               })}
             >
-              Routines
+              ROUTINES
             </NavLink>
           </li>
 
@@ -51,18 +53,16 @@ function Header(props) {
                 })}
                 //   onClick={handleLogout}
               >
-                Log Out
+                LOGOUT
               </NavLink>
             ) : (
               <NavLink
-
                 to='/'
                 style={({ isActive }) => ({
                   textDecoration: isActive ? 'underline' : 'none',
-
                 })}
               >
-                Log in
+                Login
               </NavLink>
             )}
           </li>
