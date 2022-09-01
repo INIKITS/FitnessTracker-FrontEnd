@@ -54,18 +54,14 @@ function Header(props) {
                 Log Out
               </NavLink>
             ) : (
-              <li>
-                {" "}
-                <NavLink
-                  to="/"
-                  style={({ isActive }) => ({
-                    textDecoration: isActive ? "underline" : "none",
-                  })}
-                >
-                  {" "}
-                  Log in
-                </NavLink>
-              </li>
+              <NavLink
+                to="/"
+                style={({ isActive }) => ({
+                  textDecoration: isActive ? "underline" : "none",
+                })}
+              >
+                Log in
+              </NavLink>
             )}
           </li>
         </ul>
