@@ -1,30 +1,30 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import '../styles/Header.scss';
 function Header(props) {
   const { isLoggedIn } = props;
 
-  console.log("isLoggedIn", isLoggedIn);
+  console.log('isLoggedIn', isLoggedIn);
   return (
-    <div id="header">
-      <h1 id="header-text">Fitness Tracker</h1>
+    <div id='header'>
+      <h1 id='header-text'>Fitness Tracker</h1>
       <nav>
-        <ul id="nav-list">
+        <ul id='nav-list'>
           <li>
             <NavLink
-              to="/"
+              to='/'
               style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "none",
+                textDecoration: isActive ? 'underline' : 'none',
               })}
             >
               Home
             </NavLink>
           </li>
-          <li className="nav-text">
+          <li className='nav-text'>
             <NavLink
-              to="activities"
+              to='activities'
               style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "none",
+                textDecoration: isActive ? 'underline' : 'none',
               })}
             >
               Activities
@@ -33,9 +33,9 @@ function Header(props) {
 
           <li>
             <NavLink
-              to="routines"
+              to='routines'
               style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "none",
+                textDecoration: isActive ? 'underline' : 'none',
               })}
             >
               Routines
@@ -45,9 +45,9 @@ function Header(props) {
           <li>
             {isLoggedIn ? (
               <NavLink
-                to="/"
+                to='/'
                 style={({ isActive }) => ({
-                  textDecoration: isActive ? "underline" : "none",
+                  textDecoration: isActive ? 'underline' : 'none',
                 })}
                 //   onClick={handleLogout}
               >
@@ -55,9 +55,11 @@ function Header(props) {
               </NavLink>
             ) : (
               <NavLink
-                to="/"
+
+                to='/'
                 style={({ isActive }) => ({
-                  textDecoration: isActive ? "underline" : "none",
+                  textDecoration: isActive ? 'underline' : 'none',
+
                 })}
               >
                 Log in
