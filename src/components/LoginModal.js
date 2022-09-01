@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { registerUser } from '../api';
 import '../styles/Login-Register.scss';
+import { FaUser } from 'react-icons/fa';
 
 function LoginModal(props) {
   const [error, setError] = React.useState(null);
@@ -60,7 +61,7 @@ function LoginModal(props) {
               ></input>
             </div>
             {callSuccess ? null : <p>{error}</p>}
-            <button type='submit'>Register</button>
+            <button type='submit'>SUBMIT</button>
             <Link to='/'>Already have an account? Click here to login</Link>
           </form>
         </div>
