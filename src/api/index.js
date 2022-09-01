@@ -20,3 +20,22 @@ export async function registerUser(username,password) {
         console.error(error);
     }
 }
+
+
+export async function login(username, password) {
+  try{
+    const response= await fetch(`${ BASE_URL}/api/users/login`,{
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user: {
+          username: username,
+          password: password
+        }})})
+      }catch (err) {
+        console.error('you made an error', err);
+    }
+    }
+  
