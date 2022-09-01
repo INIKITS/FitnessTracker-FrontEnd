@@ -2,14 +2,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fa9494;
+  font-family: 'Poppins', sans-serif;
+
+  #header-text {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-left: 2rem;
+  }
 
   #nav-list {
     display: flex;
+    height: 4.5rem;
+    justify-content: center;
+    align-items: center;
   }
-  ul {
-    li {
-      list-style: none;
-      padding-right: 3rem;
+
+  li {
+    list-style: none;
+    padding-right: 3rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    a {
+      text-decoration: none;
+      color: black;
     }
   }
 }
