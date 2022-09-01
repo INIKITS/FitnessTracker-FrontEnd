@@ -55,9 +55,11 @@ function Header(props) {
               </NavLink>
             ) : (
               <NavLink
+
                 to='/'
                 style={({ isActive }) => ({
                   textDecoration: isActive ? 'underline' : 'none',
+
                 })}
               >
                 Log in

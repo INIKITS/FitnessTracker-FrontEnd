@@ -5,6 +5,9 @@ import { Route, Routes } from "react-router-dom";
 import { Home, MyRoutines, Routines, Activities } from "./pages";
 import { Header, Footer } from "./components/index";
 
+
+
+
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
