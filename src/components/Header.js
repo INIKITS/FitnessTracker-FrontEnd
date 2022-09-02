@@ -62,7 +62,7 @@ function Header(props) {
                   textDecoration: isActive ? 'underline' : 'none',
                 })}
               >
-                Login
+                LOGIN
               </NavLink>
             )}
           </li>
