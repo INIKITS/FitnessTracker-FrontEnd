@@ -6,6 +6,7 @@ import { LoginModal } from "../components/index"
 function Home(props) {
     return (
 <>
+
         <h1>hellooooo</h1>
         <LoginModal />
         </>

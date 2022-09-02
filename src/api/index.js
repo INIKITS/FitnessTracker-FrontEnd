@@ -15,7 +15,8 @@ export async function registerUser(username,password) {
               password: 'krypt0n0rbust'
             })
         })
-        
+        const data = await response.json();
+        return data;
     } catch (error) {
         console.error(error);
     }
@@ -24,18 +25,35 @@ export async function registerUser(username,password) {
 
 export async function login(username, password) {
   try{
-    const response= await fetch(`${ BASE_URL}/api/users/login`,{
+    const response = await fetch(`${ BASE_URL}/api/users/login`,{
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        user: {
+        
           username: username,
           password: password
-        }})})
+        })})
+        const data =await response.json();
+        return data;
       }catch (err) {
         console.error('you made an error', err);
     }
     }
   
+
+
+    export async function activities() {
+      try{
+        const response = await fetch(`${BASE_URL}/api/activities`, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        const data =await response.json();
+        return data;
+      }catch(err){
+        console.error(err)
+      }}
+      
