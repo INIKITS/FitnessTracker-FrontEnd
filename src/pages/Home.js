@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { LoginModal } from '../components/index';
 
 function Home(props) {
+
   return (
     <>
       <h1>TRACK YOUR</h1>
