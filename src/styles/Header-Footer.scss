@@ -1,12 +1,11 @@
 // HEADER STYLING
 #header {
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fa9494;
   font-family: 'Poppins', sans-serif;
-  position: fixed;
   top: 0;
 
   .brand-logo {
@@ -30,6 +29,7 @@
       padding-left: 1rem;
       font-size: 2rem;
       font-weight: 500;
+      cursor: default;
     }
   }
   nav {
@@ -46,12 +46,11 @@
   }
 }
 
-// FOOTER STYLING
+// // FOOTER STYLING
 #footer {
   background-color: #fa9494;
-  width: 100%;
+  // width: 100%;
   height: 4.5rem;
-  bottom: 0;
-  text-align: center;
-  position: fixed;
+  // bottom: 0;
+  // text-align: center;
 }

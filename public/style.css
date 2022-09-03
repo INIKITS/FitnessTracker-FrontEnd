@@ -7,10 +7,21 @@
 }
 
 #root {
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
 }
 
-#App {
-  position: relative;
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'header header header header'
+    '. . . .'
+    '. . . .'
+    'footer footer footer footer';
+}
+
+#footer {
+  grid-area: footer;
 }

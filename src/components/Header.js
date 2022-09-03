@@ -14,7 +14,12 @@ function Header(props) {
 
   return (
     <div id='header'>
-      <h1 id='header-text'>FITNESS TRACKER</h1>
+      <div className='brand-logo'>
+        <div className='logo-container'>
+          <img src={Logo} alt='fitness-logo' />
+        </div>
+        <p>FITNESS TRACKER</p>
+      </div>
       <nav>
         <ul id='nav-list'>
           <NavLink
