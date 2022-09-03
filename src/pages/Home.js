@@ -1,14 +1,16 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { LoginModal } from '../components/index';
-import '../styles/Home.scss';
-import HomeImage from '../img/pexels-ketut-subiyanto-4436349.jpg';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { LoginModal } from "../components/index";
+import "../styles/Home.scss";
+import HomeImage from "../img/pexels-ketut-subiyanto-4436349.jpg";
 
 function Home(props) {
   return (
-    <div id='hero'>
-      <div className='bg-img'></div>
-      <p>TRACK YOUR FITNESS</p>
+    <div id="main">
+      <div id="hero">
+        <div className="bg-img"></div>
+        <p>TRACK YOUR FITNESS</p>
+      </div>
     </div>
   );
 }
