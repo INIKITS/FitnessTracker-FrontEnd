@@ -23,7 +23,7 @@ function App() {
   return (
     <div className='App'>
       <Header isLoggedIn={isLoggedIn} />
-      {/* <LoginModal /> */}
+      <LoginModal />
       <Routes>
         <Route exact path='/' element={<Home />} />
 

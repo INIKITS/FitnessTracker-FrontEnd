@@ -9,63 +9,58 @@ function Header(props) {
   console.log('isLoggedIn', isLoggedIn);
   return (
     <div id='header'>
-      <h1 id='header-text'>FITNESS TRACKER</h1>
+      <div className='brand-logo'>
+        <div className='logo-container'>
+          <img className='logo' src={Logo} alt='fitness-logo' />
+        </div>
+        <p>FITNESS TRACKER</p>
+      </div>
       <nav>
         <ul id='nav-list'>
-          <li>
+          <NavLink
+            to='/'
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            HOME
+          </NavLink>
+          <NavLink
+            to='activities'
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            ACTIVITIES
+          </NavLink>
+          <NavLink
+            to='routines'
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            ROUTINES
+          </NavLink>
+          {isLoggedIn ? (
+            <NavLink
+              to='/'
+              style={({ isActive }) => ({
+                textDecoration: isActive ? 'underline' : 'none',
+              })}
+              //   onClick={handleLogout}
+            >
+              LOGOUT
+            </NavLink>
+          ) : (
             <NavLink
               to='/'
               style={({ isActive }) => ({
                 textDecoration: isActive ? 'underline' : 'none',
               })}
             >
-              HOME
+              LOGIN
             </NavLink>
-          </li>
-          <li className='nav-text'>
-            <NavLink
-              to='activities'
-              style={({ isActive }) => ({
-                textDecoration: isActive ? 'underline' : 'none',
-              })}
-            >
-              ACTIVITIES
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              to='routines'
-              style={({ isActive }) => ({
-                textDecoration: isActive ? 'underline' : 'none',
-              })}
-            >
-              ROUTINES
-            </NavLink>
-          </li>
-
-          <li>
-            {isLoggedIn ? (
-              <NavLink
-                to='/'
-                style={({ isActive }) => ({
-                  textDecoration: isActive ? 'underline' : 'none',
-                })}
-                //   onClick={handleLogout}
-              >
-                LOGOUT
-              </NavLink>
-            ) : (
-              <NavLink
-                to='/'
-                style={({ isActive }) => ({
-                  textDecoration: isActive ? 'underline' : 'none',
-                })}
-              >
-                LOGIN
-              </NavLink>
-            )}
-          </li>
+          )}
         </ul>
       </nav>
     </div>
