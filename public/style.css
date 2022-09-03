@@ -9,26 +9,8 @@
 #root {
   width: 100vw;
   height: 100vh;
-  background-color: #f5eddc;
 }
 
 #App {
-  /* position: relative; */
+  position: relative;
 }
-
-/* #header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#nav-list {
-  display: flex;
-}
-#header > nav > ul > li {
-  list-style: none;
-  padding-right: 3rem;
-}
-
-footer {
-
-} */

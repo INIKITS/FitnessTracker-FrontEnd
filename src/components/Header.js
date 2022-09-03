@@ -23,8 +23,9 @@ function Header(props) {
               style={({ isActive }) => ({
                 textDecoration: isActive ? "underline" : "none",
               })}
+              //   onClick={handleLogout}
             >
-              HOME
+              LOGOUT
             </NavLink>
           </li>
           <li className="nav-text">
@@ -45,7 +46,7 @@ function Header(props) {
                 textDecoration: isActive ? "underline" : "none",
               })}
             >
-              ROUTINES
+              LOGIN
             </NavLink>
           </li>
           {isLoggedIn ? (
