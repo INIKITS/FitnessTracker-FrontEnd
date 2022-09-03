@@ -46,6 +46,8 @@ function App() {
           }
         />
 
+        <Route exact path="/myroutines" element={<MyRoutines userToken={userToken}/>} />
+
         <Route
           exact
           path="/login"
