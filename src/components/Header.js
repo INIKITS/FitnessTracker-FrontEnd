@@ -24,7 +24,7 @@ function Header(props) {
             })}
             //   onClick={handleLogout}
           >
-            LOGOUT
+            HOME
           </NavLink>
           <NavLink
             to='activities'
@@ -40,7 +40,7 @@ function Header(props) {
               textDecoration: isActive ? 'underline' : 'none',
             })}
           >
-            LOGIN
+            ROUTINES
           </NavLink>
           {isLoggedIn ? (
             <NavLink
