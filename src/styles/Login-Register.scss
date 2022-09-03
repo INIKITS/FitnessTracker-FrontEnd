@@ -13,6 +13,10 @@
   font-family: 'Poppins', sans-serif;
   position: fixed;
 
+  #register-error {
+    font-size:1rem;
+  }
+
   form {
     display: flex;
     align-items: center;

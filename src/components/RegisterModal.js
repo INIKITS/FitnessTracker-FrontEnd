@@ -1,11 +1,10 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { login } from "../api";
+import { Link } from "react-router-dom";
+import { registerUser } from "../api";
 import "../styles/Login-Register.scss";
 import { FaUser } from "react-icons/fa";
 
-function LoginModal(props) {
-  const navigate = useNavigate();
+function RegisterModal(props) {
   const [errorMessage, setErrorMessage] = React.useState("");
   const [callSuccess, setCallSuccess] = React.useState(true);
   const [modal, setModal] = React.useState(false);
@@ -20,7 +19,7 @@ function LoginModal(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    login(
+    registerUser(
       username,
       password,
       setUsername,
@@ -30,8 +29,6 @@ function LoginModal(props) {
       setErrorMessage,
       setCallSuccess
     );
-
-    navigate("/");
   };
 
   return (
@@ -39,7 +36,7 @@ function LoginModal(props) {
       <div id="modal">
         <div id="new-post-form">
           <form onSubmit={handleSubmit}>
-            <h2>Login</h2>
+            <h2>Register</h2>
             <div className="form-group">
               <input
                 type="text"
@@ -66,7 +63,9 @@ function LoginModal(props) {
             </div>
             {callSuccess ? null : <p id="register-error">{errorMessage}</p>}
             <button type="submit">SUBMIT</button>
-            <Link to="/register">Need an account? Click here to register</Link>
+            <Link to="/login">
+              Already have an account? Click here to login
+            </Link>
           </form>
         </div>
       </div>
@@ -74,4 +73,4 @@ function LoginModal(props) {
   );
 }
 
-export default LoginModal;
+export default RegisterModal;
