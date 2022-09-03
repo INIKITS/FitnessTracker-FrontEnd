@@ -64,22 +64,45 @@ export async function login(
   setCallSuccess
 ) {
   try {
-    const response = await fetch(`${BASE_URL}/api/users/login`, {
+    const response = await fetch(`${BASE_URL}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: username,
-        password: password,
+        username: `${username}`,
+        password: `${password}`,
       }),
     });
     const data = await response.json();
+    console.log("data", data);
+    if (data.token) {
+      setUserToken(data.token);
+      window.localStorage.setItem(
+        "user",
+        JSON.stringify({
+          username: `${username}`,
+          password: `${password}`,
+          _id: `${data.user.id}`,
+          token: `${data.token}`,
+        })
+      );
+      setIsLoggedIn(true);
+    } else if (data.error) {
+      console.log("data.error", data.error);
+      setCallSuccess(false);
+      setErrorMessage(data.error);
+      setTimeout(() => {
+        setCallSuccess(true);
+      }, 2000);
+    }
+    console.log("data", data);
     return data;
-  } catch (err) {
-    console.error("you made an error", err);
+  } catch (error) {
+    console.error(error);
   }
 }
+
 export async function getActivities() {
   try {
     const response = await fetch(`${BASE_URL}/activities`, {
@@ -92,4 +115,10 @@ export async function getActivities() {
   } catch (err) {
     console.error(err);
   }
+}
+
+export function logout(setIsLoggedIn) {
+  localStorage.removeItem("user");
+  console.log("madeithere");
+  setIsLoggedIn(false);
 }
