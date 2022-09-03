@@ -1,32 +1,37 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import '../styles/Header-Footer.scss';
-import Logo from '../img/spa-logotype.png';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { logout } from "../api";
+import "../styles/Header-Footer.scss";
+import Logo from "../img/spa-logotype.png";
 
 function Header(props) {
-  const { isLoggedIn } = props;
+  const { isLoggedIn, setIsLoggedIn } = props;
 
-  console.log('isLoggedIn', isLoggedIn);
+  const handleLogout = (event) => {
+    event.preventDefault();
+    logout(setIsLoggedIn);
+  };
+
   return (
-    <div id='header'>
-      <h1 id='header-text'>FITNESS TRACKER</h1>
+    <div id="header">
+      <h1 id="header-text">FITNESS TRACKER</h1>
       <nav>
-        <ul id='nav-list'>
+        <ul id="nav-list">
           <li>
             <NavLink
-              to='/'
+              to="/"
               style={({ isActive }) => ({
-                textDecoration: isActive ? 'underline' : 'none',
+                textDecoration: isActive ? "underline" : "none",
               })}
             >
               HOME
             </NavLink>
           </li>
-          <li className='nav-text'>
+          <li className="nav-text">
             <NavLink
-              to='activities'
+              to="activities"
               style={({ isActive }) => ({
-                textDecoration: isActive ? 'underline' : 'none',
+                textDecoration: isActive ? "underline" : "none",
               })}
             >
               ACTIVITIES
@@ -35,9 +40,9 @@ function Header(props) {
 
           <li>
             <NavLink
-              to='routines'
+              to="routines"
               style={({ isActive }) => ({
-                textDecoration: isActive ? 'underline' : 'none',
+                textDecoration: isActive ? "underline" : "none",
               })}
             >
               ROUTINES
@@ -47,9 +52,10 @@ function Header(props) {
           <li>
             {isLoggedIn ? (
               <NavLink
-                to='/'
+                to="/"
+                onClick={(event) => handleLogout(event)}
                 style={({ isActive }) => ({
-                  textDecoration: isActive ? 'underline' : 'none',
+                  textDecoration: isActive ? "underline" : "none",
                 })}
                 //   onClick={handleLogout}
               >
@@ -57,9 +63,9 @@ function Header(props) {
               </NavLink>
             ) : (
               <NavLink
-                to='/login'
+                to="/login"
                 style={({ isActive }) => ({
-                  textDecoration: isActive ? 'underline' : 'none',
+                  textDecoration: isActive ? "underline" : "none",
                 })}
               >
                 LOGIN

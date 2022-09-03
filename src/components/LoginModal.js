@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { login} from "../api";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../api";
 import "../styles/Login-Register.scss";
 import { FaUser } from "react-icons/fa";
 
 function LoginModal(props) {
+  const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = React.useState("");
   const [callSuccess, setCallSuccess] = React.useState(true);
   const [modal, setModal] = React.useState(false);
@@ -29,9 +30,9 @@ function LoginModal(props) {
       setErrorMessage,
       setCallSuccess
     );
+
+    navigate("/");
   };
-
-
 
   return (
     <>
