@@ -53,7 +53,6 @@ export async function registerUser(
   }
 }
 
-<<<<<<< HEAD
 export async function login(
   username,
   password,
@@ -81,16 +80,16 @@ export async function login(
     console.error("you made an error", err);
   }
 }
-    export async function getActivities() {
-      try{
-        const response = await fetch(`${BASE_URL}/activities`, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
-        const data =await response.json();
-        return data;
-      }catch(err){
-        console.error(err)
-      }}
-      
+export async function getActivities() {
+  try {
+    const response = await fetch(`${BASE_URL}/activities`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
