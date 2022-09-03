@@ -25,7 +25,7 @@ export async function registerUser(username,password) {
 
 export async function login(username, password) {
   try{
-    const response = await fetch(`${ BASE_URL}/api/users/login`,{
+    const response = await fetch(`${ BASE_URL}/users/login`,{
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -44,9 +44,9 @@ export async function login(username, password) {
   
 
 
-    export async function activities() {
+    export async function getActivities() {
       try{
-        const response = await fetch(`${BASE_URL}/api/activities`, {
+        const response = await fetch(`${BASE_URL}/activities`, {
           headers: {
             'Content-Type': 'application/json',
           },
