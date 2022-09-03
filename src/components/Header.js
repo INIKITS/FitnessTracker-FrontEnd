@@ -48,19 +48,33 @@ function Header(props) {
               ROUTINES
             </NavLink>
           </li>
-
-          <li>
-            {isLoggedIn ? (
+          {isLoggedIn ? (
+            <li>
               <NavLink
-                to="/"
-                onClick={(event) => handleLogout(event)}
+                to="/myroutines"
                 style={({ isActive }) => ({
                   textDecoration: isActive ? "underline" : "none",
                 })}
-                //   onClick={handleLogout}
               >
-                LOGOUT
+                MY ROUTINES
               </NavLink>
+            </li>
+          ) : null}
+
+          <li>
+            {isLoggedIn ? (
+              <>
+                <NavLink
+                  to="/"
+                  onClick={(event) => handleLogout(event)}
+                  style={({ isActive }) => ({
+                    textDecoration: isActive ? "underline" : "none",
+                  })}
+                  //   onClick={handleLogout}
+                >
+                  LOGOUT
+                </NavLink>
+              </>
             ) : (
               <NavLink
                 to="/login"
