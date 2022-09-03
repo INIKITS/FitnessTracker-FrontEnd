@@ -117,6 +117,19 @@ export async function getActivities() {
   }
 }
 
+export async function getAllRoutines(setPublicRoutines) {
+  try {
+    const response = await fetch(`${BASE_URL}/activities`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    setPublicRoutines(data);
+    return data;
+  } catch (error) {}
+}
+
 export function logout(setIsLoggedIn) {
   localStorage.removeItem("user");
   console.log("madeithere");

@@ -10,13 +10,14 @@ import {
   Login,
   Register,
 } from "./pages";
-import { Header, Footer, LoginModal } from "./components/index";
+import { Header, Footer } from "./components/index";
 
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [userToken, setUserToken] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -35,7 +36,15 @@ function App() {
 
         <Route exact path="/activities" element={<Activities />} />
 
-        <Route exact path="/routines" element={<Routines />} />
+        <Route
+          exact
+          path="/routines"
+          element={
+            <Routines
+
+            />
+          }
+        />
 
         <Route
           exact
