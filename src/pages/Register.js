@@ -5,7 +5,7 @@ import "../styles/Home.scss";
 import HomeImage from "../img/pexels-ketut-subiyanto-4436349.jpg";
 
 function Register(props) {
-  const [errorMessage, setErrorMessage] = props;
+  const { errorMessage, setErrorMessage } = props;
   const {
     setUsername,
     username,

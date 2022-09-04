@@ -28,7 +28,7 @@ function CreateRoutineForm(props) {
       <div id="create-routine-form">
         <div id="new-routine-form">
           <form onSubmit={handleSubmit}>
-            <h2>Login</h2>
+            <h2>Create Routine</h2>
             <div className="form-group">
               <input
                 type="text"
