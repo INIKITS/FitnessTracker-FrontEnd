@@ -16,8 +16,8 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [userToken, setUserToken] = useState("");
+  const [errorMessage, setErrorMessage] = React.useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -36,17 +36,19 @@ function App() {
 
         <Route exact path="/activities" element={<Activities />} />
 
+        <Route exact path="/routines" element={<Routines />} />
+
         <Route
           exact
-          path="/routines"
+          path="/myroutines"
           element={
-            <Routines
-
+            <MyRoutines
+              userToken={userToken}
+              errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
             />
           }
         />
-
-        <Route exact path="/myroutines" element={<MyRoutines userToken={userToken}/>} />
 
         <Route
           exact
