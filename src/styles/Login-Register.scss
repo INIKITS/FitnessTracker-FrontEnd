@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin-left: 40%;
   margin-top: 10%;
   border-radius: 5%;
@@ -14,7 +15,7 @@
   position: fixed;
 
   #register-error {
-    font-size:1rem;
+    font-size: 1rem;
   }
 
   form {
@@ -62,6 +63,15 @@
     a {
       padding-top: 0.5rem;
       font-size: 0.9rem;
+    }
+  }
+  .close-modal {
+    svg {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      cursor: pointer;
+      transform: scale(1.2);
     }
   }
 }

@@ -6,11 +6,31 @@
   box-sizing: border-box;
 }
 
-#root {
+.App {
   width: 100vw;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header header header header'
+    'main main main main'
+    'main main main main'
+    'footer footer footer footer';
 }
 
-#App {
-  position: relative;
+#header {
+  grid-area: header;
+  align-self: start;
+}
+
+#footer {
+  grid-area: footer;
+  align-self: end;
+}
+
+#main {
+  grid-area: main;
+  overflow: hidden;
+  /* max-height: clamp(450px, 50vh, 600px); */
 }
