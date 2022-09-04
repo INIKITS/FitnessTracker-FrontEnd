@@ -5,13 +5,12 @@ import "../styles/Routines.scss";
 
 function MyRoutinesCard(props) {
   const [myRoutines, setMyRoutines] = useState([]);
-  const {userToken} = props;
+  const { errorMessage, setErrorMessage, userToken, username, userId } = props;
 
-
+  console.log("username :>> ", username);
 
   useEffect(() => {
-    getRoutinesById(setMyRoutines, userToken, id)
-
+    getRoutinesById(myRoutines, setMyRoutines, userToken, username, userId);
   }, []);
 
   return (
@@ -22,7 +21,7 @@ function MyRoutinesCard(props) {
             return (
               <div key={routine.id}>
                 <h3 id="routines-title">{routine.name}</h3>
-                <p>{routine.description}</p>
+                <p>{routine.goal}</p>
               </div>
             );
           })}

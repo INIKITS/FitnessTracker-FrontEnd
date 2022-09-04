@@ -16,6 +16,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [userToken, setUserToken] = useState("");
+  const [userId, setUserId] = useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,6 +27,8 @@ function App() {
       setIsLoggedIn(true);
       const userInfo = JSON.parse(user);
       setUserToken(userInfo.token);
+      setUserId(userInfo._userId);
+      setUsername(userInfo.username);
     }
   }, []);
 
@@ -43,6 +46,8 @@ function App() {
           element={
             <MyRoutines
               userToken={userToken}
+              username={username}
+              userId={userId}
               errorMessage={errorMessage}
               setErrorMessage={setErrorMessage}
             />
@@ -56,15 +61,15 @@ function App() {
           path="/login"
           element={
             <Login
-            username={username}
-            setUsername={setUsername}
-            password={password}
-            setPassword={setPassword}
-            userToken={userToken}
-            setUserToken={setUserToken}
-            setIsLoggedIn={setIsLoggedIn}
-            errorMessage={errorMessage}
-            setErrorMessage={setErrorMessage}
+              username={username}
+              setUsername={setUsername}
+              password={password}
+              setPassword={setPassword}
+              userToken={userToken}
+              setUserToken={setUserToken}
+              setIsLoggedIn={setIsLoggedIn}
+              errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
             />
           }
         />
@@ -74,15 +79,15 @@ function App() {
           path="/register"
           element={
             <Register
-            username={username}
-            setUsername={setUsername}
-            password={password}
-            setPassword={setPassword}
-            userToken={userToken}
-            setUserToken={setUserToken}
-            setIsLoggedIn={setIsLoggedIn}
-            errorMessage={errorMessage}
-            setErrorMessage={setErrorMessage}
+              username={username}
+              setUsername={setUsername}
+              password={password}
+              setPassword={setPassword}
+              userToken={userToken}
+              setUserToken={setUserToken}
+              setIsLoggedIn={setIsLoggedIn}
+              errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
             />
           }
         />

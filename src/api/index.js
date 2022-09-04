@@ -135,18 +135,30 @@ export async function getAllRoutines(setPublicRoutines) {
   } catch (error) {}
 }
 
-// export async function getRoutinesById(id){
-//   const response = await fetch(`${BASE_URL}/users/:username/routines`
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Authorization': 'Bearer ' + userToken,
-//     }
-//   })
-//   const data = response.json();
+export async function getRoutinesById(
+  myRoutines,
+  setMyRoutines,
+  userToken,
+  username,
+  userId
+) {
+  try {
+    const response = await fetch(`${BASE_URL}/users/${username}/routines`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + userToken,
+      },
+    });
+    const data = await response.json();
 
-//   console.log('data :>> ', data);
-//   return data;
-// }
+    setMyRoutines(...myRoutines, data);
+
+    console.log("data :>> ", data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export async function createRoutine(
   routineTitle,
