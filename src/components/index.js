@@ -4,3 +4,4 @@ export { default as RegisterModal } from "./RegisterModal";
 export { default as CreateRoutineForm } from "./CreateRoutineForm";
 export { default as FormCard } from "./FormCard";
 export { default as Footer } from "./Footer";
+export { default as CreateActivityForm} from "./CreateActivityForm";

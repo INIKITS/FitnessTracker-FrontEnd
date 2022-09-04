@@ -38,12 +38,14 @@ export async function registerUser(
         })
       );
       setIsLoggedIn(true);
+      setCallSuccess(true);
     } else if (data.error) {
       console.log("data.error", data.error);
       setCallSuccess(false);
       setErrorMessage(data.error);
       setTimeout(() => {
         setCallSuccess(true);
+        setErrorMessage("");
       }, 2000);
     }
     console.log("data", data);
@@ -88,12 +90,14 @@ export async function login(
         })
       );
       setIsLoggedIn(true);
+      setCallSuccess(true);
     } else if (data.error) {
       console.log("data.error", data.error);
       setCallSuccess(false);
       setErrorMessage(data.error);
       setTimeout(() => {
         setCallSuccess(true);
+        setErrorMessage("");
       }, 2000);
     }
     console.log("data", data);
@@ -115,6 +119,42 @@ export async function getActivities() {
   } catch (err) {
     console.error(err);
   }
+}
+
+export async function createActivity(
+  activityTitle,
+  activityDescription,
+  isPublic,
+  setErrorMessage,
+  setCallSuccess,
+  userToken
+) {
+  try {
+    const response = await fetch(`${BASE_URL}/activities`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + userToken,
+      },
+      method: "POST",
+      body: JSON.stringify({
+        name: activityTitle,
+        goal: activityDescription,
+        isPublic: isPublic,
+      }),
+    });
+
+    const data = await response.json();
+    if (data.error) {
+      setCallSuccess(false);
+      setErrorMessage(data.message);
+      setTimeout(() => {
+        setCallSuccess(true);
+      }, 2000);
+    }
+
+    console.log("data :>> ", data);
+    return data;
+  } catch (error) {}
 }
 
 export async function getAllRoutines(setPublicRoutines) {

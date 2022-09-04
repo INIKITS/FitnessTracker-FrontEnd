@@ -4,6 +4,7 @@ import { getActivities } from "../api";
 import "../styles/Activities.scss";
 
 function Activities(props) {
+  const { errorMessage, setErrorMessage, userToken } = props;
   const [activities, setActivities] = useState([]);
   useEffect(() => {
     getActivities()
