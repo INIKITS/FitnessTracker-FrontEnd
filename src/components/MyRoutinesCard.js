@@ -7,10 +7,10 @@ function MyRoutinesCard(props) {
   const [myRoutines, setMyRoutines] = useState([]);
   const { errorMessage, setErrorMessage, userToken, username, userId } = props;
 
-  console.log("username :>> ", username);
-
   useEffect(() => {
     getRoutinesById(myRoutines, setMyRoutines, userToken, username, userId);
+
+
   }, []);
 
   return (
@@ -25,7 +25,6 @@ function MyRoutinesCard(props) {
               </div>
             );
           })}
-          <h3 id="routines-title"></h3>
         </div>
       </div>
     </>

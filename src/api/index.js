@@ -146,14 +146,14 @@ export async function getRoutinesById(
     const response = await fetch(`${BASE_URL}/users/${username}/routines`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + userToken,
+        Authorization: `Bearer ${userToken}`,
       },
     });
     const data = await response.json();
 
-    setMyRoutines(...myRoutines, data);
-
-    console.log("data :>> ", data);
+    if (data.goal) {
+      setMyRoutines(data);
+    }
     return data;
   } catch (error) {
     console.error(error);
@@ -172,7 +172,7 @@ export async function createRoutine(
     const response = await fetch(`${BASE_URL}/routines`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + userToken,
+        "Authorization": `Bearer ${userToken}`,
       },
       method: "POST",
       body: JSON.stringify({
@@ -188,10 +188,10 @@ export async function createRoutine(
       setErrorMessage(data.message);
       setTimeout(() => {
         setCallSuccess(true);
+        setErrorMessage("");
       }, 2000);
     }
 
-    console.log("data :>> ", data);
     return data;
   } catch (error) {}
 }

@@ -53,7 +53,7 @@ function CreateRoutineForm(props) {
                 }}
               ></input>
             </div>
-            <span> is private? </span>
+            <span> is public? </span>
             <input
               type="checkbox"
               name="isPublic "
@@ -61,7 +61,6 @@ function CreateRoutineForm(props) {
               onChange={() => {
                 setIsPublic((old) => !old);
               }}
-              //   {isPublic ? "uncheck" : "check"}{" "}
             />
             {callSuccess ? null : <p id="register-error">{errorMessage}</p>}
             <button type="submit">SUBMIT</button>
