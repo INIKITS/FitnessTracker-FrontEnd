@@ -1,8 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { RegisterModal } from "../components/index";
-import "../styles/Home.scss";
-import HomeImage from "../img/pexels-ketut-subiyanto-4436349.jpg";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { RegisterModal } from '../components/index';
+import '../styles/Home.scss';
+import HomeImage from '../img/pexels-ketut-subiyanto-4436349.jpg';
 
 function Register(props) {
   const { errorMessage, setErrorMessage } = props;
@@ -17,9 +17,7 @@ function Register(props) {
   } = props;
 
   return (
-    <div id="home-wrapper">
-      <p className="title1">TRACK YOUR</p>
-      <p className="title2">FITNESS</p>
+    <div id='main'>
       <RegisterModal
         username={username}
         setUsername={setUsername}
@@ -31,6 +29,12 @@ function Register(props) {
         errorMessage={errorMessage}
         setErrorMessage={setErrorMessage}
       />
+      <div className='overlay'>
+        <div id='hero'>
+          <div className='bg-img'></div>
+          <p>TRACK YOUR FITNESS</p>
+        </div>
+      </div>
     </div>
   );
 }
