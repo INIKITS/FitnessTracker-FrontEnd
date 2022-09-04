@@ -1,8 +1,8 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { LoginModal } from '../components/index';
-import '../styles/Login-Register.scss';
-import HomeImage from '../img/pexels-ketut-subiyanto-4436349.jpg';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { LoginModal } from "../components/index";
+import "../styles/Login-Register.scss";
+import HomeImage from "../img/pexels-ketut-subiyanto-4436349.jpg";
 
 function Login(props) {
   const {
@@ -18,7 +18,7 @@ function Login(props) {
   } = props;
 
   return (
-    <div id='main'>
+    <div id="main">
       <LoginModal
         username={username}
         setUsername={setUsername}
@@ -30,8 +30,8 @@ function Login(props) {
         errorMessage={errorMessage}
         setErrorMessage={setErrorMessage}
       />
-      <div id='hero'>
-        <div className='bg-img'></div>
+      <div id="hero">
+        <div className="bg-img"></div>
         <p>TRACK YOUR FITNESS</p>
       </div>
     </div>
