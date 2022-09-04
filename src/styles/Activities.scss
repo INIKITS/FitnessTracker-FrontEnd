@@ -6,16 +6,64 @@
   background-attachment: fixed;
   background-color: #f5eddc;
   width: 100vw;
-
-  h1 {
-    position: relative;
-    left: 12rem;
-
-
-  .activity-container {
+  overflow: auto;
+  overflow-x: hidden;
+  font-family:'Poppins', sans-serif;
+   
+  #create-activity-form{
+    background-color: blue;
+    display: flex;
+    width: 30rem;
+    border-radius: 1.5rem;
+    height: 15rem;
+    justify-content: center;
+    text-align: center;
     
-    
-    
+
+    input, textarea, select{
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e6e6e6;
+      border-radius: 5px;
+      margin-top: 2px;
+      margin-bottom: 10px;
+      font-family: inherit;
+      box-shadow: inset 0 1px 4px 1px rgba(136, 136, 136, 0.486);
+    }
+
+    #new-activity-form{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      button{
+        padding: 5px 25px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background: #d9d9d9;
+        color: black;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        text-align: center;
+        appearance: button;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        font-family: inherit;
+        font-weight: 500;
+      }
+
+      
+
+    }
   }
-}}
+
+
+  
+  
+  
+}
 
