@@ -1,8 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createRoutine } from "../api";
-// import { } from "../api";
-// import "../styles/Login-Register.scss";
 import { FaUser } from "react-icons/fa";
 import "../styles/Login-Register.scss";
 

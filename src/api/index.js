@@ -131,6 +131,19 @@ export async function getAllRoutines(setPublicRoutines) {
   } catch (error) {}
 }
 
+export async function getRoutinesById(id){
+  const response = await fetch(`${BASE_URL}/users/:username/routines`
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + userToken,
+    }
+  })
+  const data = response.json();
+
+  console.log('data :>> ', data);
+  return data;
+}
+
 export async function createRoutine(
   routineTitle,
   routineDescription,
