@@ -5,13 +5,10 @@ import "../styles/Routines.scss";
 
 function MyRoutinesCard(props) {
   const [myRoutines, setMyRoutines] = useState([]);
-  const {userToken} = props;
-
-
+  const { userToken } = props;
 
   useEffect(() => {
-    getRoutinesById(setMyRoutines, userToken, id)
-
+    getRoutinesById(setMyRoutines, userToken, id);
   }, []);
 
   return (

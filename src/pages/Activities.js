@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { getActivities } from '../api';
-import { CreateActivityForm } from '../components';
-import activities from "../img/Lady-Streatching.jpg"
-import '../styles/Activities.scss';
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { getActivities } from "../api";
+import "../styles/Activities.scss";
 
 function Activities(props) {
   const { errorMessage, setErrorMessage, userToken } = props;
@@ -14,16 +12,11 @@ function Activities(props) {
       .catch(console.error);
   }, [activities]);
   return (
-    <div className='activity-wrapper'>
-      <h1>Activities</h1>
-      <CreateActivityForm
-      errorMessage={errorMessage}
-      setErrorMessage={setErrorMessage}
-      userToken={userToken}
-    />
-      {activities && activities.map((activity) => {
+    <div className="activity-wrapper">
+      {activities &&
+        activities.map((activity) => {
           return (
-            <div className='activity-container' key={activity.id}>
+            <div className="activity-container" key={activity.id}>
               <p>Name: {activity.name}</p>
               <p>Description: {activity.description}</p>
             </div>

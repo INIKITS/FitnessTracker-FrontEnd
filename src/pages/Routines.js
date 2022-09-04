@@ -4,10 +4,12 @@ import { FormCard } from "../components";
 
 function Routines(props) {
   return (
-    <>
+    <div className="public-routines">
       <h1>Public Routines</h1>
-      <FormCard />
-    </>
+      <div className="pub-container">
+        <FormCard />
+      </div>
+    </div>
   );
 }
 
