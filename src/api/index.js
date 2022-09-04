@@ -130,6 +130,43 @@ export async function getAllRoutines(setPublicRoutines) {
   } catch (error) {}
 }
 
+export async function createRoutine(
+  routineTitle,
+  routineDescription,
+  isPublic,
+  setErrorMessage,
+  setCallSuccess,
+  userToken
+) {
+  try {
+    const response = await fetch(`${BASE_URL}/routines`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + userToken
+
+      },
+      method: "POST",
+      body: JSON.stringify({
+        name:  routineTitle,
+        goal:  routineDescription,
+        isPublic: isPublic ,
+      }),
+    });
+
+    const data = await response.json();
+    if (data.error) {
+      setCallSuccess(false);
+      setErrorMessage(data.message)
+      setTimeout(() => {
+        setCallSuccess(true);
+      }, 2000);
+    }
+
+    console.log("data :>> ", data);
+    return data;
+  } catch (error) {}
+}
+
 export function logout(setIsLoggedIn) {
   localStorage.removeItem("user");
   console.log("madeithere");

@@ -13,6 +13,8 @@ function Login(props) {
     userToken,
     setUserToken,
     setIsLoggedIn,
+    errorMessage,
+    setErrorMessage,
   } = props;
 
   return (
@@ -27,6 +29,8 @@ function Login(props) {
         userToken={userToken}
         setUserToken={setUserToken}
         setIsLoggedIn={setIsLoggedIn}
+        errorMessage={errorMessage}
+        setErrorMessage={setErrorMessage}
       />
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {FormCard } from "../components"
+import { FormCard } from "../components";
 
 function Routines(props) {
   return (

@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { getAllRoutines } from "../api";
 import "../styles/Routines.scss";
 
-function FormCard() {
+function FormCard(props) {
   const [publicRoutines, setPublicRoutines] = useState([]);
+
 
   //   await getAllRoutines(setPublicRoutines);
 
