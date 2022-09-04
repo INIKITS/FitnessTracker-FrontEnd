@@ -9,7 +9,7 @@ function RegisterModal(props) {
   const navigate = useNavigate();
 
   const { errorMessage, setErrorMessage } = props;
-  const [callSuccess, setCallSuccess] = React.useState(true);
+  const [callSuccess, setCallSuccess] = React.useState(null);
 
   const {
     setUsername,
@@ -33,7 +33,9 @@ function RegisterModal(props) {
       setCallSuccess
     );
 
-    navigate("/");
+    if (callSuccess) {
+      navigate("/");
+    }
   };
 
   return (

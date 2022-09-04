@@ -6,16 +6,18 @@ import { FaTimesCircle } from "react-icons/fa";
 
 function LoginModal(props) {
   const navigate = useNavigate();
-  const { errorMessage, setErrorMessage } = props;
-  const [callSuccess, setCallSuccess] = React.useState(true);
+  const [callSuccess, setCallSuccess] = React.useState(null);
 
   const {
     setUsername,
     username,
     setPassword,
     password,
+    userToken,
     setUserToken,
     setIsLoggedIn,
+    errorMessage,
+    setErrorMessage,
   } = props;
 
   const handleSubmit = (event) => {
@@ -30,8 +32,9 @@ function LoginModal(props) {
       setErrorMessage,
       setCallSuccess
     );
-
-    navigate("/");
+    if (callSuccess) {
+      navigate("/");
+    }
   };
 
   return (
