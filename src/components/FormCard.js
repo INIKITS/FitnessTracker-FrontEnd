@@ -20,15 +20,18 @@ function FormCard(props) {
             return (
               <div className="routines-cards" key={routine.id}>
                 <h3>ROUTINE</h3>
-                <h4 id="routines-title">{routine.name}</h4>
-                <p>author: {routine.creatorName}</p>
-                <p>goal: {routine.goal}</p>
-                <p>description: {routine.description}</p>
+                <div className="routine-contents">
+                  <h4 id="routines-title">{routine.name}</h4>
+                  <p>author: {routine.creatorName}</p>
+                  <p>goal: {routine.goal}</p>
+                  <p>description: {routine.description}</p>
+                </div>
                 {routine.activities.map((activity) => {
                   return (
                     <>
-                      <div key={activity.id} id="routine-activity-card">
-                        <h3>ACTIVITY</h3>
+                      <hr />
+                      <h3>ACTIVITY</h3>
+                      <div key={activity.id} className="activity-contents">
                         <p>activity: {activity.name}</p>
                         <p>description: {activity.description}</p>
                         <p>duration: {activity.duration}</p>
@@ -40,7 +43,6 @@ function FormCard(props) {
               </div>
             );
           })}
-          <h3 id="routines-title"></h3>
         </div>
       </div>
     </>
