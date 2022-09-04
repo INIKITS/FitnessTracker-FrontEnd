@@ -1,11 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { CreateRoutineForm, MyRoutinesCard } from "../components";
+import { CreateRoutineForm } from "../components";
+import "../styles/My- Routine.scss"
 
 function MyRoutines(props) {
   const { errorMessage, setErrorMessage, userToken, username, userId } = props;
   return (
-    <>
+    
+    <div className="myroutine">
       <h1>My Routines</h1>
       <CreateRoutineForm
         userToken={userToken}
@@ -21,7 +23,8 @@ function MyRoutines(props) {
         errorMessage={errorMessage}
         setErrorMessage={setErrorMessage}
       />
-    </>
+      </div>
+    
   );
 }
 

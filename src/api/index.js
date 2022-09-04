@@ -121,6 +121,40 @@ export async function getActivities() {
   }
 }
 
+export async function createActivity(
+  activityTitle,
+  activityDescription,
+  setErrorMessage,
+  setCallSuccess,
+  userToken
+) {
+  try {
+    const response = await fetch(`${BASE_URL}/activities`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + userToken,
+      },
+      method: "POST",
+      body: JSON.stringify({
+        name: activityTitle,
+        description: activityDescription,
+      }),
+    });
+
+    const data = await response.json();
+    if (data.error) {
+      setCallSuccess(false);
+      setErrorMessage(data.message);
+      setTimeout(() => {
+        setCallSuccess(true);
+      }, 2000);
+    }
+
+    console.log("data :>> ", data);
+    return data;
+  } catch (error) {}
+}
+
 export async function getAllRoutines(setPublicRoutines) {
   try {
     const response = await fetch(`${BASE_URL}/routines`, {

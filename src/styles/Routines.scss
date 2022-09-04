@@ -1,3 +1,57 @@
-div{
-   overflow: auto;
+.public-routines {
+  font-family: "Poppins", sans-serif;
+  overflow: auto;
+  background-image: url(../img/Lady-Streatching.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  background-attachment: fixed;
+  background-color: #f5eddc;
+  width: 100vw;
+  padding-top: 1.5rem;
+  overflow-x: hidden;
+
+  h1 {
+    position: relative;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    right: 10rem;
+  }
+
+  .pub-container {
+    font-size: 1.5rem;
+    position: relative;
+
+    #routines-container {
+      margin-right: 20rem;
+      #routines-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        hr {
+          color: black;
+          margin: 0.3rem 0;
+        }
+        .routines-cards {
+          h3 {
+            background-color: rgba(49, 49, 49, 0.829);
+            color: white;
+            border-radius: 1rem;
+            padding-left: 0.5rem;
+          }
+          padding: 1rem 3rem;
+          background-color: #f9f9f9;
+          border-radius: 2rem;
+          font-size: 0.9rem;
+          width: 50rem;
+          margin-bottom: 1rem;
+          .routine-contents,
+          .activity-contents {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
 }
