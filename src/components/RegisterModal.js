@@ -7,7 +7,7 @@ import { FaTimesCircle } from 'react-icons/fa';
 
 function RegisterModal(props) {
 
-  const [errorMessage, setErrorMessage] = props
+  const {errorMessage, setErrorMessage} = props
   const [callSuccess, setCallSuccess] = React.useState(true);
   
   
@@ -21,6 +21,7 @@ function RegisterModal(props) {
   } = props;
 
   const handleSubmit = (event) => {
+    const navigate = navigate();
     event.preventDefault();
     registerUser(
       username,
