@@ -1,20 +1,26 @@
-#home-wrapper {
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
   padding-top: 18rem;
   padding-right: 10rem;
+  background: url(../img/pexels-ketut-subiyanto-4436349.jpg) no-repeat left
+    fixed;
+  background-size: 50%;
+  height: 80em;
 
   p {
-    font-size: 4rem;
-    text-decoration: underline;
-  }
+    font-size: 4.5rem;
 
-  .title1 {
-    margin-right: 16rem;
+    background-image: linear-gradient(
+      to left,
+      rgb(245, 237, 220) 75%,
+      rgb(245, 237, 220) 50%,
+      rgb(245, 237, 220),
+      rgba(0, 0, 0, 0)
+    );
   }
 }
 
