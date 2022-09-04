@@ -38,12 +38,14 @@ export async function registerUser(
         })
       );
       setIsLoggedIn(true);
+      setCallSuccess(true);
     } else if (data.error) {
       console.log("data.error", data.error);
       setCallSuccess(false);
       setErrorMessage(data.error);
       setTimeout(() => {
         setCallSuccess(true);
+        setErrorMessage("");
       }, 2000);
     }
     console.log("data", data);
@@ -88,12 +90,14 @@ export async function login(
         })
       );
       setIsLoggedIn(true);
+      setCallSuccess(true);
     } else if (data.error) {
       console.log("data.error", data.error);
       setCallSuccess(false);
       setErrorMessage(data.error);
       setTimeout(() => {
         setCallSuccess(true);
+        setErrorMessage("");
       }, 2000);
     }
     console.log("data", data);

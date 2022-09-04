@@ -56,13 +56,15 @@ function App() {
           path="/login"
           element={
             <Login
-              username={username}
-              setUsername={setUsername}
-              password={password}
-              setPassword={setPassword}
-              userToken={userToken}
-              setUserToken={setUserToken}
-              setIsLoggedIn={setIsLoggedIn}
+            username={username}
+            setUsername={setUsername}
+            password={password}
+            setPassword={setPassword}
+            userToken={userToken}
+            setUserToken={setUserToken}
+            setIsLoggedIn={setIsLoggedIn}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
             />
           }
         />
@@ -72,13 +74,15 @@ function App() {
           path="/register"
           element={
             <Register
-              username={username}
-              setUsername={setUsername}
-              password={password}
-              setPassword={setPassword}
-              userToken={userToken}
-              setUserToken={setUserToken}
-              setIsLoggedIn={setIsLoggedIn}
+            username={username}
+            setUsername={setUsername}
+            password={password}
+            setPassword={setPassword}
+            userToken={userToken}
+            setUserToken={setUserToken}
+            setIsLoggedIn={setIsLoggedIn}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
             />
           }
         />
