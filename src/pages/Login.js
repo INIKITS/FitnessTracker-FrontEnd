@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { LoginModal } from '../components/index';
-import '../styles/Home.scss';
+import '../styles/Login-Register.scss';
 import HomeImage from '../img/pexels-ketut-subiyanto-4436349.jpg';
 
 function Login(props) {
@@ -30,11 +30,9 @@ function Login(props) {
         errorMessage={errorMessage}
         setErrorMessage={setErrorMessage}
       />
-      <div className='overlay'>
-        <div id='hero'>
-          <div className='bg-img'></div>
-          <p>TRACK YOUR FITNESS</p>
-        </div>
+      <div id='hero'>
+        <div className='bg-img'></div>
+        <p>TRACK YOUR FITNESS</p>
       </div>
     </div>
   );
