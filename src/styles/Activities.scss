@@ -1,9 +1,16 @@
 .activity-wrapper {
-  background-color: blue;
+  background-color: wheat;
+  background-image: url(../img/routines.jpg);
+
+
   .activity-container {
-    background-color: red;
+    display: flex;
+    background-color:white; 
+    flex-direction: column;
+    flex-grow: 400px;
+    
     p {
-      color: white;
+      color: black;
     }
   }
 }
