@@ -7,7 +7,6 @@ function Activities(props) {
   const [activities,setActivities]=useState([])
   useEffect(()=>{
     getActivities()
-    .then(data =>console.log(data))
     .then(data => setActivities(data))
     .catch(console.error)
   },[activities])

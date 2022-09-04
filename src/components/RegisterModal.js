@@ -6,10 +6,11 @@ import { FaUser } from 'react-icons/fa';
 import { FaTimesCircle } from 'react-icons/fa';
 
 function RegisterModal(props) {
-  const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = React.useState('');
+
+  const [errorMessage, setErrorMessage] = props
   const [callSuccess, setCallSuccess] = React.useState(true);
-  const [modal, setModal] = React.useState(false);
+  
+  
   const {
     setUsername,
     username,
