@@ -49,7 +49,11 @@ function App() {
           }
         />
 
-        <Route exact path="/activities" element={<Activities />} />
+        <Route exact path="/activities" element={<Activities
+         userToken={userToken}
+         errorMessage={errorMessage}
+         setErrorMessage={setErrorMessage}
+         />} />
 
         <Route
           exact

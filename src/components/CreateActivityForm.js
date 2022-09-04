@@ -9,14 +9,12 @@ function CreateActivityForm(props) {
   const [activityDescription, setActivityDescription] = React.useState("");
   const { errorMessage, setErrorMessage, userToken } = props;
   const [callSuccess, setCallSuccess] = React.useState(true);
-  const [isPublic, setIsPublic] = React.useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     createActivity(
       activityTitle,
       activityDescription,
-      isPublic,
       setErrorMessage,
       setCallSuccess,
       userToken
@@ -53,16 +51,6 @@ function CreateActivityForm(props) {
                 }}
               ></input>
             </div>
-            <span> is private? </span>
-            <input
-              type="checkbox"
-              name="isPublic "
-              checked={isPublic}
-              onChange={() => {
-                setIsPublic((old) => !old);
-              }}
-              //   {isPublic ? "uncheck" : "check"}{" "}
-            />
             {callSuccess ? null : <p id="register-error">{errorMessage}</p>}
             <button type="submit">SUBMIT</button>
           </form>
