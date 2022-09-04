@@ -62,7 +62,6 @@ function CreateRoutineForm(props) {
               checked={isPublic}
               onChange={() => {
                 setIsPublic((old) => !old);
-                console.log("isPublic :>> ", isPublic);
               }}
               //   {isPublic ? "uncheck" : "check"}{" "}
             />
