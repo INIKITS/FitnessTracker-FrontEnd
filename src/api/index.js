@@ -124,7 +124,6 @@ export async function getActivities() {
 export async function createActivity(
   activityTitle,
   activityDescription,
-  isPublic,
   setErrorMessage,
   setCallSuccess,
   userToken
@@ -138,8 +137,7 @@ export async function createActivity(
       method: "POST",
       body: JSON.stringify({
         name: activityTitle,
-        goal: activityDescription,
-        isPublic: isPublic,
+        description: activityDescription,
       }),
     });
 
