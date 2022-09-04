@@ -12,9 +12,11 @@ function Activities(props) {
   },[activities])
   return (
   <div> 
+    <h1>Activities</h1>
   
     {activities && activities.map((activity)=>{
       return(
+        
         <div key={activity.id}>
           <p>Name: {activity.name}</p>
           <p>Description: {activity.description}</p>
