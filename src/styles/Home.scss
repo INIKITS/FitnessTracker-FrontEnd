@@ -1,32 +1,34 @@
-#hero {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-  grid-template-rows: 2fr 2fr;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  grid-template-areas:
-    'hero-img title-text'
-    'hero-img title-text';
-  min-height: 100vh;
+.overlay {
+  #hero {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    grid-template-areas:
+      'hero-img title-text'
+      'hero-img title-text';
+    min-height: 100vh;
 
-  .bg-img {
-    background: url(../img/pexels-ketut-subiyanto-4436349.jpg) no-repeat left;
+    .bg-img {
+      background: url(../img/pexels-ketut-subiyanto-4436349.jpg) no-repeat left;
 
-    grid-area: hero-img;
-  }
-  p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4.5rem;
-    background-image: linear-gradient(
-      to left,
-      rgb(245, 237, 220) 75%,
-      rgb(245, 237, 220) 50%,
-      rgb(245, 237, 220),
-      rgba(0, 0, 0, 0)
-    );
-    text-decoration: underline;
-    grid-area: title-text;
+      grid-area: hero-img;
+    }
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      background-image: linear-gradient(
+        to left,
+        rgb(245, 237, 220) 75%,
+        rgb(245, 237, 220) 50%,
+        rgb(245, 237, 220),
+        rgba(0, 0, 0, 0)
+      );
+      text-decoration: underline;
+      grid-area: title-text;
+    }
   }
 }
