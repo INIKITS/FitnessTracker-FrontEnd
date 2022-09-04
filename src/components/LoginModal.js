@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../api';
 import '../styles/Login-Register.scss';
-import { FaUser } from 'react-icons/fa';
+import { FaTimesCircle } from 'react-icons/fa';
 
 function LoginModal(props) {
   const navigate = useNavigate();
@@ -37,6 +37,9 @@ function LoginModal(props) {
   return (
     <>
       <div id='modal'>
+        <div className='close-modal'>
+          <FaTimesCircle />
+        </div>
         <div id='new-post-form'>
           <form onSubmit={handleSubmit}>
             <h2>Login</h2>

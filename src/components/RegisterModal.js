@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { registerUser } from '../api';
 import '../styles/Login-Register.scss';
 import { FaUser } from 'react-icons/fa';
+import { FaTimesCircle } from 'react-icons/fa';
 
 function RegisterModal(props) {
   const navigate = useNavigate();
@@ -37,6 +38,9 @@ function RegisterModal(props) {
   return (
     <>
       <div id='modal'>
+        <div className='close-modal'>
+          <FaTimesCircle />
+        </div>
         <div id='new-post-form'>
           <form onSubmit={handleSubmit}>
             <h2>Register</h2>
