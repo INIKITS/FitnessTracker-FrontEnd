@@ -131,18 +131,18 @@ export async function getAllRoutines(setPublicRoutines) {
   } catch (error) {}
 }
 
-export async function getRoutinesById(id){
-  const response = await fetch(`${BASE_URL}/users/:username/routines`
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + userToken,
-    }
-  })
-  const data = response.json();
+// export async function getRoutinesById(id){
+//   const response = await fetch(`${BASE_URL}/users/:username/routines`
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization': 'Bearer ' + userToken,
+//     }
+//   })
+//   const data = response.json();
 
-  console.log('data :>> ', data);
-  return data;
-}
+//   console.log('data :>> ', data);
+//   return data;
+// }
 
 export async function createRoutine(
   routineTitle,
@@ -155,22 +155,21 @@ export async function createRoutine(
   try {
     const response = await fetch(`${BASE_URL}/routines`, {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + userToken
-
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + userToken,
       },
       method: "POST",
       body: JSON.stringify({
-        name:  routineTitle,
-        goal:  routineDescription,
-        isPublic: isPublic ,
+        name: routineTitle,
+        goal: routineDescription,
+        isPublic: isPublic,
       }),
     });
 
     const data = await response.json();
     if (data.error) {
       setCallSuccess(false);
-      setErrorMessage(data.message)
+      setErrorMessage(data.message);
       setTimeout(() => {
         setCallSuccess(true);
       }, 2000);
