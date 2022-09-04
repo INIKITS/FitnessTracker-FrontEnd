@@ -1,20 +1,21 @@
 #modal {
-  // display: none;
+  display: none;
   background-color: #f9f9f9;
   height: 20rem;
   width: 30rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin-left: 40%;
   margin-top: 10%;
   border-radius: 5%;
-  box-shadow: 5px 4px 30px rgba(87, 87, 87, 0.226);
+  box-shadow: 4px 4px 6px rgba(87, 87, 87, 0.226);
   font-family: 'Poppins', sans-serif;
-  position: absolute;
+  position: fixed;
 
   #register-error {
-    font-size:1rem;
+    font-size: 1rem;
   }
 
   form {
@@ -62,6 +63,15 @@
     a {
       padding-top: 0.5rem;
       font-size: 0.9rem;
+    }
+  }
+  .close-modal {
+    svg {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      cursor: pointer;
+      transform: scale(1.2);
     }
   }
 }

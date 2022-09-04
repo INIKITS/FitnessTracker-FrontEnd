@@ -1,42 +1,56 @@
+// HEADER STYLING
 #header {
-  position: absolute;
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fa9494;
   font-family: 'Poppins', sans-serif;
+  top: 0;
 
-  #header-text {
-    font-size: 2rem;
-    font-weight: 500;
-    padding-left: 2rem;
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    .logo-container {
+      background-color: #f9f9f9;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      border-radius: 36%;
+
+      img {
+        width: 50px;
+        border-radius: 20%;
+      }
+    }
+
+    p {
+      padding-left: 1rem;
+      font-size: 2rem;
+      font-weight: 500;
+      cursor: default;
+    }
   }
-
-  #nav-list {
+  nav {
     display: flex;
     height: 4.5rem;
     justify-content: center;
     align-items: center;
-  }
-
-  li {
-    list-style: none;
-    padding-right: 3rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-
     a {
-      text-decoration: none;
       color: black;
+      margin-right: 2.5rem;
+      font-size: 1.3rem;
+      font-weight: 400;
     }
   }
 }
 
+// // FOOTER STYLING
 #footer {
   background-color: #fa9494;
-  width: 100%;
-  height: 4.5rem;
-  position: absolute;
-  bottom: 0;
+  // width: 100%;
+  height: 3.5rem;
+  // bottom: 0;
+  // text-align: center;
 }
