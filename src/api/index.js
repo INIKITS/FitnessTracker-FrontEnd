@@ -119,12 +119,13 @@ export async function getActivities() {
 
 export async function getAllRoutines(setPublicRoutines) {
   try {
-    const response = await fetch(`${BASE_URL}/activities`, {
+    const response = await fetch(`${BASE_URL}/routines`, {
       headers: {
         "Content-Type": "application/json",
       },
     });
     const data = await response.json();
+    console.log("data", data);
     setPublicRoutines(data);
     return data;
   } catch (error) {}
