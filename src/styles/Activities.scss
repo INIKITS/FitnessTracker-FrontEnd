@@ -1,16 +1,21 @@
 .activity-wrapper {
-  background-color: wheat;
   background-image: url(../img/routines.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  background-attachment: fixed;
+  background-color: #f5eddc;
+  width: 100vw;
+
+  h1 {
+    position: relative;
+    left: 12rem;
 
 
   .activity-container {
-    display: flex;
-    background-color:white; 
-    flex-direction: column;
-    flex-grow: 400px;
     
-    p {
-      color: black;
-    }
+    
+    
   }
-}
+}}
+

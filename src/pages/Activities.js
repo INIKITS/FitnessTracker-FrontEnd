@@ -14,6 +14,7 @@ function Activities(props) {
   }, [activities]);
   return (
     <div className="activity-wrapper">
+      <h1>Activities</h1>
       <CreateActivityForm
             errorMessage={errorMessage}
         setErrorMessage={setErrorMessage}
@@ -22,9 +23,10 @@ function Activities(props) {
       {activities &&
         activities.map((activity) => {
           return (<div className="activity-container" key={activity.id}>
-              <p>Name: {activity.name}</p>
+            <p>Name: {activity.name}</p>
               <p>Description: {activity.description}</p>
             </div>
+            
           );
         })}
     </div>
