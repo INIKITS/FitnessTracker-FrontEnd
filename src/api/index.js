@@ -32,7 +32,6 @@ export async function registerUser(
         "user",
         JSON.stringify({
           username: `${username}`,
-          password: `${password}`,
           _id: `${data.user.id}`,
           token: `${data.token}`,
         })
@@ -163,24 +162,34 @@ export async function getAllRoutines(setPublicRoutines) {
       },
     });
     const data = await response.json();
-    console.log("data", data);
     setPublicRoutines(data);
     return data;
   } catch (error) {}
 }
 
-// export async function getRoutinesById(id){
-//   const response = await fetch(`${BASE_URL}/users/:username/routines`
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Authorization': 'Bearer ' + userToken,
-//     }
-//   })
-//   const data = response.json();
+export async function getRoutinesById(
+  myRoutines,
+  setMyRoutines,
+  userToken,
+  username,
+  userId
+) {
+  try {
+    const response = await fetch(`${BASE_URL}/users/${username}/routines`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userToken}`,
+      },
+    });
+    const data = await response.json();
+    console.log("data :>> ", data);
 
-//   console.log('data :>> ', data);
-//   return data;
-// }
+    setMyRoutines(data, ...myRoutines);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export async function createRoutine(
   routineTitle,
@@ -194,7 +203,7 @@ export async function createRoutine(
     const response = await fetch(`${BASE_URL}/routines`, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer " + userToken,
+        Authorization: `Bearer ${userToken}`,
       },
       method: "POST",
       body: JSON.stringify({
@@ -210,14 +219,33 @@ export async function createRoutine(
       setErrorMessage(data.message);
       setTimeout(() => {
         setCallSuccess(true);
+        setErrorMessage("");
       }, 2000);
     }
 
-    console.log("data :>> ", data);
     return data;
   } catch (error) {}
 }
 
+export async function deleteRoutine(id, userToken) {
+  try {
+    const response = await fetch(
+      `http://fitnesstrac-kr.herokuapp.com/api/routines/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      }
+    );
+    const data = await response.json;
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
 export function logout(setIsLoggedIn) {
   localStorage.removeItem("user");
   console.log("madeithere");
