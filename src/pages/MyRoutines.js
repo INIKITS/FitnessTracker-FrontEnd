@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
+import { NavLink } from "react-router-dom"
 import { CreateRoutineForm } from "../components";
 import "../styles/My-Routine.scss";
+import {MyRoutinesCard} from "../components"
 
 
 function MyRoutines(props) {

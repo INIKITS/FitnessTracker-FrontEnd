@@ -8,21 +8,30 @@
   width: 100vw;
 
   .my-routine-container {
-    // display: flex;
-    // justify-content: flex-end;
-    // align-items: flex-end;
-    // flex-direction: column;
-    margin-left: auto;
+    border-radius: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin-left: auto;
     margin-right: 19rem;
     margin-top: 3rem;
     text-align: center;
-    background-color: blue;
+    background-color: #ebdfc7;
     width: 40rem;
     font-family: "Poppins", sans-serif;
 
     #create-routine-form {
-      background-color: purple;
-      width: 30rem;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0;
+      width: 25rem;
+      border-radius: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 1px 4px 3px rgba(87, 87, 87, 0.226);
     }
   }
 }
