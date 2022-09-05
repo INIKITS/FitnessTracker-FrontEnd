@@ -25,7 +25,6 @@ export async function registerUser(
       }),
     });
     const data = await response.json();
-    console.log("data", data);
     if (data.token) {
       setUserToken(data.token);
       window.localStorage.setItem(
@@ -39,7 +38,7 @@ export async function registerUser(
       setIsLoggedIn(true);
       setCallSuccess(true);
     } else if (data.error) {
-      console.log("data.error", data.error);
+
       setCallSuccess(false);
       setErrorMessage(data.error);
       setTimeout(() => {
@@ -47,7 +46,7 @@ export async function registerUser(
         setErrorMessage("");
       }, 2000);
     }
-    console.log("data", data);
+
     return data;
   } catch (error) {
     console.error(error);
@@ -76,7 +75,6 @@ export async function login(
       }),
     });
     const data = await response.json();
-    console.log("data", data);
     if (data.token) {
       setUserToken(data.token);
       window.localStorage.setItem(
@@ -91,7 +89,7 @@ export async function login(
       setIsLoggedIn(true);
       setCallSuccess(true);
     } else if (data.error) {
-      console.log("data.error", data.error);
+
       setCallSuccess(false);
       setErrorMessage(data.error);
       setTimeout(() => {
@@ -99,7 +97,6 @@ export async function login(
         setErrorMessage("");
       }, 2000);
     }
-    console.log("data", data);
     return data;
   } catch (error) {
     console.error(error);
@@ -148,8 +145,6 @@ export async function createActivity(
         setCallSuccess(true);
       }, 2000);
     }
-
-    console.log("data :>> ", data);
     return data;
   } catch (error) {}
 }
@@ -182,7 +177,6 @@ export async function getRoutinesById(
       },
     });
     const data = await response.json();
-    console.log("data :>> ", data);
 
     setMyRoutines(data, ...myRoutines);
     return data;
