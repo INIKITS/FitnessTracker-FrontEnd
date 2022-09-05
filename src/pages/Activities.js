@@ -14,21 +14,25 @@ function Activities(props) {
   }, [activities]);
   return (
     <div className="activity-wrapper">
-      <h1>Activities</h1>
-      <CreateActivityForm
-            errorMessage={errorMessage}
-        setErrorMessage={setErrorMessage}
-        userToken={userToken}
-        /> 
-      {activities &&
-        activities.map((activity) => {
-          return (<div className="activity-container" key={activity.id}>
-            <p>Name: {activity.name}</p>
-              <p>Description: {activity.description}</p>
-            </div>
-            
-          );
-        })}
+      <div className="activity-container">
+        <h1>Activities</h1>
+        <CreateActivityForm
+          errorMessage={errorMessage}
+          setErrorMessage={setErrorMessage}
+          userToken={userToken}
+        />
+        <div className="activity-cards">
+          {activities &&
+            activities.map((activity) => {
+              return (
+                <div className="submit-cards" key={activity.id}>
+                  <p>Name: {activity.name}</p>
+                  <p>Description: {activity.description}</p>
+                </div>
+              );
+            })}
+        </div>
+      </div>
     </div>
   );
 }
