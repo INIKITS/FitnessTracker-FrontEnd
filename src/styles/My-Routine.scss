@@ -1,0 +1,28 @@
+.myroutine {
+  background-image: url(../img/Blend.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  background-attachment: fixed;
+  background-color: #f5eddc;
+  width: 100vw;
+
+  .my-routine-container {
+    // display: flex;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+    // flex-direction: column;
+    margin-left: auto;
+    margin-right: 19rem;
+    margin-top: 3rem;
+    text-align: center;
+    background-color: blue;
+    width: 40rem;
+    font-family: "Poppins", sans-serif;
+
+    #create-routine-form {
+      background-color: purple;
+      width: 30rem;
+    }
+  }
+}
