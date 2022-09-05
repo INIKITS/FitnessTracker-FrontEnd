@@ -248,6 +248,5 @@ export async function deleteRoutine(id, userToken) {
 }
 export function logout(setIsLoggedIn) {
   localStorage.removeItem("user");
-  console.log("madeithere");
   setIsLoggedIn(false);
 }
