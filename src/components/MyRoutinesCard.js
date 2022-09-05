@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getAllRoutines, getRoutinesById } from "../api";
+import { getAllRoutines, getRoutinesById, deleteRoutine } from "../api";
 import "../styles/Routines.scss";
 
 function MyRoutinesCard(props) {
@@ -9,9 +9,13 @@ function MyRoutinesCard(props) {
 
   useEffect(() => {
     getRoutinesById(myRoutines, setMyRoutines, userToken, username, userId);
-
-
   }, []);
+
+  const handleDelete = (event, routineId) => {
+    event.preventDefault();
+    deleteRoutine(routineId, userToken);
+    console.log("its delete :>> ", routineId);
+  };
 
   return (
     <>
@@ -22,6 +26,12 @@ function MyRoutinesCard(props) {
               <div key={routine.id}>
                 <h3 id="routines-title">{routine.name}</h3>
                 <p>{routine.goal}</p>
+                <button
+                  id="routine-delete"
+                  onClick={(e) => handleDelete(e, routine.id)}
+                >
+                  Delete
+                </button>
               </div>
             );
           })}
