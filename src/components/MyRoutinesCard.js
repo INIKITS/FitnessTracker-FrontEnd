@@ -9,7 +9,7 @@ function MyRoutinesCard(props) {
 
   useEffect(() => {
     getRoutinesById(myRoutines, setMyRoutines, userToken, username, userId);
-  }, [...myRoutines]);
+  }, [myRoutines]);
 
   const handleDelete = (event, routineId) => {
     event.preventDefault();
