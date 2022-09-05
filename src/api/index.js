@@ -184,7 +184,7 @@ export async function getRoutinesById(
     const data = await response.json();
     console.log("data :>> ", data);
 
-    setMyRoutines(data);
+    setMyRoutines(data, ...myRoutines);
     return data;
   } catch (error) {
     console.error(error);
@@ -227,6 +227,25 @@ export async function createRoutine(
   } catch (error) {}
 }
 
+export async function deleteRoutine(id, userToken) {
+  try {
+    const response = await fetch(
+      `http://fitnesstrac-kr.herokuapp.com/api/routines/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userToken}`,
+        },
+      }
+    );
+    const data = await response.json;
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
 export function logout(setIsLoggedIn) {
   localStorage.removeItem("user");
   console.log("madeithere");
