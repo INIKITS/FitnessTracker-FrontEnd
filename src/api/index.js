@@ -32,7 +32,6 @@ export async function registerUser(
         "user",
         JSON.stringify({
           username: `${username}`,
-          password: `${password}`,
           _id: `${data.user.id}`,
           token: `${data.token}`,
         })
@@ -163,7 +162,6 @@ export async function getAllRoutines(setPublicRoutines) {
       },
     });
     const data = await response.json();
-    console.log("data", data);
     setPublicRoutines(data);
     return data;
   } catch (error) {}
@@ -184,10 +182,9 @@ export async function getRoutinesById(
       },
     });
     const data = await response.json();
+    console.log("data :>> ", data);
 
-    if (data.goal) {
-      setMyRoutines(data);
-    }
+    setMyRoutines(data);
     return data;
   } catch (error) {
     console.error(error);
@@ -206,7 +203,7 @@ export async function createRoutine(
     const response = await fetch(`${BASE_URL}/routines`, {
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${userToken}`,
+        Authorization: `Bearer ${userToken}`,
       },
       method: "POST",
       body: JSON.stringify({
